@@ -1,1 +1,33 @@
-<h1>Konverse Coding Project, Weather App</h1>
+<h1>Weather App</h1>
+
+<div>
+
+  Forecast:
+  <select ng-model="forecast">
+    <option value="1">Today
+    <option value="7">7 Day
+    <option value="16">16 Day
+  </select>
+</br>
+
+  Enter by city name (City, State Abbreviation): <input type="text" ng-model="city">
+  <button class="btn btn-primary" ng-click="send()">Send</button>
+
+</div>
+
+<hr>
+<div ng-switch="forecast">
+  <div ng-switch-when="1">
+    <h1>One Day Forecast for {{city}}</h1>
+    <p>{{avgTemp}} Degrees Farenheit</p>
+  </div>
+  <div ng-switch-when="7">
+    <h1>7 Day Forecast for {{city}}</h1>
+    <p>{{avgTemp}} Degrees Farenheit</p>
+  </div>
+  <div ng-switch-when="16">
+    <h1>16 Day Forecast for {{city}}</h1>
+    <p>{{avgTemp}} Degrees Farenheit</p>
+  </div>
+</div>
+</hr>
